@@ -16,8 +16,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:10080,http://localhost:3045').split(',').map(s=>s.trim());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:10080',
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true);
+    if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app') || origin.includes('localhost')) return cb(null, true);
+    return cb(null, true);
+  },
   credentials: true,
 }));
 
