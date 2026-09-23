@@ -10,7 +10,11 @@
 
 > **Deploy di Vercel:** Auto deploy dari `main` — setiap push ke GitHub langsung live di preview di atas.
 
-![Preview](https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/og-image.png)
+<p align="center">
+  <a href="https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&h=600&fit=crop" alt="VillaNusantara Preview" width="100%" style="border-radius: 16px; border: 1px solid #e2e8f0;" /></a>
+  <br />
+  <em>Preview: https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/ — klik gambar untuk live demo</em>
+</p>
 
 ---
 
@@ -180,11 +184,12 @@ villa-frontend: node:20-alpine, 10080:3000 (standalone)
 
 ## 📸 Screenshots
 
-> Ganti dengan screenshot asli setelah `npm run build`
+| Home Hero + SearchBar | Villas Grid + Map | Detail Gallery + Booking |
+|---|---|---|
+| ![Home](https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop) | ![Villas](https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=400&fit=crop) | ![Detail](https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop) |
+| Hero parallax + SearchBar floating | Filter + grid 3 + map sticky | Gallery 420px + thumb + sticky booking gradient |
 
-- Home hero + SearchBar floating
-- Villas grid 3 + filter + map sticky
-- Detail gallery 420px + thumb + sticky booking gradient
+> Screenshots di atas pakai Unsplash (villa real). Ganti dengan screenshot asli `http://localhost:3045` setelah `npm run dev` jika mau.
 
 ---
 
