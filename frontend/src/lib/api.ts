@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== "undefined" && window.location.hostname.includes("vercel.app") ? "https://backend-chi-six-99.vercel.app/api" : "http://localhost:4000/api");
 
 interface FetchOptions extends RequestInit {
   params?: Record<string, string | number | undefined>;
@@ -30,23 +30,36 @@ export async function apiFetch<T>(endpoint: string, options: FetchOptions = {}):
     }
   }
 
-  const res = await fetch(url, {
-    ...fetchOptions,
-    headers: {
-      "Content-Type": "application/json",
-      ...authHeaders,
-      ...(fetchOptions.headers as Record<string, string>),
-    },
-  });
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      ...fetchOptions,
+      headers: {
+        "Content-Type": "application/json",
+        ...authHeaders,
+        ...(fetchOptions.headers as Record<string, string>),
+      },
+    });
+  } catch (e: any) {
+    throw new Error(`Terjadi kesalahan koneksi ke ${API_URL}. Cek CORS & NEXT_PUBLIC_API_URL. Detail: ${e.message}`);
+  }
 
-  const data = await res.json();
+  let data: any;
+  try {
+    data = await res.json();
+  } catch {
+    throw new Error(`Terjadi kesalahan koneksi: ${res.status} ${res.statusText} dari ${url}`);
+  }
 
   if (!res.ok) {
     if (res.status === 401 && typeof window !== "undefined") {
       localStorage.removeItem("villa-auth");
-      window.location.href = "/login";
+      // jangan redirect jika di public page
+      if (!window.location.pathname.startsWith("/villas") && window.location.pathname !== "/" && !window.location.pathname.startsWith("/about")) {
+        window.location.href = "/login";
+      }
     }
-    throw new Error(data.message || "Terjadi kesalahan");
+    throw new Error(data.message || `Terjadi kesalahan: ${res.status}`);
   }
 
   return data;
