@@ -2,15 +2,15 @@
 
 > Private pool villa di Bali, Lombok & Yogyakarta. Foto real, harga owner langsung, konfirmasi instan &lt;3 menit via WhatsApp.
 
-![Next.js](https://img.shields.io/badge/Next.js-15.5-black?logo=next.js)
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38BDF8?logo=tailwindcss)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript)
-![Prisma](https://img.shields.io/badge/Prisma-6.4-2D3748?logo=prisma)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![Vercel](https://img.shields.io/badge/Vercel-Live-black?logo=vercel)](https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/) ![Next.js](https://img.shields.io/badge/Next.js-15.5-black?logo=next.js) ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react) ![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38BDF8?logo=tailwindcss) ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript) ![Prisma](https://img.shields.io/badge/Prisma-6.4-2D3748?logo=prisma) ![License](https://img.shields.io/badge/License-MIT-green)
 
+**🚀 Live Preview:** **https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/**  
 **Live Demo (dev):** `http://localhost:3045` → `http://localhost:3045/villas` → `http://localhost:3045/villas/1`  
 **GitHub:** https://github.com/sulaksana23/villa
+
+> **Deploy di Vercel:** Auto deploy dari `main` — setiap push ke GitHub langsung live di preview di atas.
+
+![Preview](https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/og-image.png)
 
 ---
 
