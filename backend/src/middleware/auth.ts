@@ -68,6 +68,7 @@ async function getUserRoles(userId: number): Promise<string[]> {
     INNER JOIN model_has_roles mr ON r.id = mr.role_id
     WHERE mr.model_id = ${userId}
   `;
+  return rows.map(r => r.name);
 }
 
 export function authorize(...permissions: string[]) {
