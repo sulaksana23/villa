@@ -1,0 +1,37 @@
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+frontend/.next/
+backend/dist/
+dist/
+.next/
+.env
+.env.local
+*.log
+uploads/
+prisma/*.db
+.turbo/
+vendor/
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+bootstrap/cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+docker/mysql/data/
+
+# Kilo
+kil*
+.kilocode/
+.claude/
