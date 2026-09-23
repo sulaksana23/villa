@@ -11,9 +11,9 @@
 > **Deploy di Vercel:** Auto deploy dari `main` — setiap push ke GitHub langsung live di preview di atas.
 
 <p align="center">
-  <a href="https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/"><img src="frontend/public/screenshot-home.png" alt="VillaNusantara Preview" width="100%" style="border-radius: 16px; border: 1px solid #e2e8f0;" /></a>
+  <a href="https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/"><img src="frontend/public/screenshot-home.jpg" alt="VillaNusantara Preview" width="100%" style="border-radius: 16px; border: 1px solid #e2e8f0;" /></a>
   <br />
-  <em>Preview: https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/ — klik gambar untuk live demo (screenshot real localhost:3045)</em>
+  <em>Preview: https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/ — klik gambar untuk live demo (screenshot real localhost:3045, 186KB)</em>
 </p>
 
 ---
@@ -182,12 +182,12 @@ villa-frontend: node:20-alpine, 10080:3000 (standalone)
 
 ---
 
-## 📸 Screenshots (Real `localhost:3045`)
+## 📸 Screenshots (Real `localhost:3045` — compressed JPG 80%)
 
 | Home Hero + SearchBar | Villas Grid + Map | Detail Gallery + Booking |
 |---|---|---|
-| ![Home](frontend/public/screenshot-home.png) | ![Villas](frontend/public/screenshot-villas.png) | ![Detail](frontend/public/screenshot-detail.png) |
-| Hero parallax + SearchBar floating | Filter + grid 3 + map sticky | Gallery 420px + thumb + sticky booking gradient |
+| ![Home](frontend/public/screenshot-home.jpg) | ![Villas](frontend/public/screenshot-villas.jpg) | ![Detail](frontend/public/screenshot-detail.jpg) |
+| Hero parallax + SearchBar floating (186KB) | Filter + grid 3 + map sticky (265KB) | Gallery 420px + thumb + sticky booking gradient (330KB) |
 
 > Screenshot real dari `npm run dev -- --port 3045` — auto update tiap `npx playwright screenshot`.
 
