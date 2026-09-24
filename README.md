@@ -1,14 +1,14 @@
 # VillaNusantara — Luxury Villa Booking Platform
 
-> Private pool villa di Bali, Lombok & Yogyakarta. Foto real, harga owner langsung, konfirmasi instan &lt;3 menit via WhatsApp.
+> Private pool villa di Bali, Lombok & Yogyakarta. 12 villa curated, foto real, harga jujur — frontend only, no backend needed.
 
-[![Vercel](https://img.shields.io/badge/Vercel-Live-black?logo=vercel)](https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/) ![Next.js](https://img.shields.io/badge/Next.js-15.5-black?logo=next.js) ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react) ![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38BDF8?logo=tailwindcss) ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript) ![Prisma](https://img.shields.io/badge/Prisma-6.4-2D3748?logo=prisma) ![License](https://img.shields.io/badge/License-MIT-green)
+[![Vercel](https://img.shields.io/badge/Vercel-Live-black?logo=vercel)](https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/) ![Next.js](https://img.shields.io/badge/Next.js-15.5-black?logo=next.js) ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react) ![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38BDF8?logo=tailwindcss) ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript) ![Framer](https://img.shields.io/badge/Framer_Motion-12-0055FF?logo=framer) ![License](https://img.shields.io/badge/License-MIT-green)
 
 **🚀 Live Preview:** **https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/**  
 **Live Demo (dev):** `http://localhost:3045` → `http://localhost:3045/villas` → `http://localhost:3045/villas/1`  
 **GitHub:** https://github.com/sulaksana23/villa
 
-> **Deploy di Vercel:** Auto deploy dari `main` — setiap push ke GitHub langsung live di preview di atas.
+> **Deploy di Vercel:** Auto deploy dari `main` — setiap push ke GitHub langsung live di preview di atas. Frontend only — `mockVillas` 12 data, tidak perlu DB.
 
 <p align="center">
   <a href="https://villafrontend-6jebv9q9q-sulaksana23s-projects.vercel.app/"><img src="frontend/public/screenshot-home.jpg" alt="VillaNusantara Preview" width="100%" style="border-radius: 16px; border: 1px solid #e2e8f0;" /></a>
@@ -18,24 +18,22 @@
 
 ---
 
-## ✨ Fitur
+## ✨ Fitur (Frontend Only — 12 Villa Mock)
 
 ### Public (Booking)
-- **Home** — Hero parallax + floating villa card, SearchBar, categories (Bali/Lombok/Jogja/Beachfront), featured 6 villa stagger, trust 4 stats, testimonials 4.9/5, why 3, CTA gradient
-- **Villas** — Filter search/lokasi/harga/amenitas, sort populer/rating/harga, grid/list toggle, badge quick filter, map sticky (soon), 6 villa mock + API fallback
+- **Home** — Hero parallax + floating villa card `animate-float`, SearchBar, categories (Bali/Lombok/Jogja/Beachfront/Ubud/Family), featured 12 villa stagger `framer-motion`, trust 4 stats, testimonials 4.9/5, why 3, CTA gradient
+- **Villas** — Filter search/lokasi/harga/amenitas, sort populer/rating/harga, grid/list toggle, badge quick filter, map sticky, 12 villa (Ubud, Seminyak, Canggu, Lombok, Jogja, Uluwatu, Sidemen, Nusa Penida, Munduk, Gili, Borobudur, Jimbaran)
 - **Detail `[id]`** — Gallery 4 foto + thumb lightbox, sticky booking widget (date/nights/guests, cleaning fee, diskon 10% ≥3 malam, WA link), amenities, reviews, kebijakan, similar 3
 - **Booking** — 3 step (Data Tamu → Pembayaran → Konfirmasi), transfer/WA/COD, DP 10%, invoice WA
-- **Lain:** About timeline 2018→2026, Contact form + map, FAQ 6, Gallery 12, Favorites, 404, loading skeleton
+- **Blog** — 6 posts (tips, itinerary, kurasi), StaggerGrid
+- **Lain:** About timeline 2018→2026, Contact form + map, FAQ 6, Gallery 12, Favorites, Admin Mock (table 12 villa), 404, loading skeleton, `sitemap.xml` + `robots.txt` + `manifest.json` PWA
 
 ### Animations
-- `framer-motion` + Tailwind keyframes (`fadeInUp`, `float`, `shimmer`)
+- `framer-motion` 12 + Tailwind keyframes (`fadeInUp`, `float`, `shimmer`)
 - `AnimatedSection` (viewport once), `StaggerGrid` (0.08s), hover `scale-[1.01]` `shadow-2xl`
 
-### Dashboard (Admin)
-- Auth JWT + RBAC (`view_villas`, `create_villas`...)
-- Villa CRUD + Room CRUD + VillaType/Facility
-- Prisma MySQL + Redis + ioredis
-- Layout sidebar + topbar search + metrics
+### Admin Mock
+- Tanpa backend — `mockVillas` 12, table + stats (Total Villa, Tersedia, Booking 342, Revenue Rp 890jt) di `/admin`
 
 ---
 
@@ -44,35 +42,31 @@
 | Layer | Tech |
 |-------|------|
 | **Frontend** | Next.js 15.5 (App Router, Turbopack), React 19, TypeScript 5.7, Tailwind 4, shadcn/ui, Radix, Zustand, React Hook Form + Zod, Sonner, Framer Motion 12 |
-| **Backend** | Express 4, Prisma 6, MySQL 8, Redis 7, JWT, Bcrypt, Multer, Zod |
-| **Infra** | Docker Compose (villa-db:13306, villa-redis:16379, backend:4000, frontend:10080), Node 20 Alpine |
+| **Infra** | Docker `villa-frontend:10080:3000`, Node 20 Alpine, Vercel |
 
 ---
 
-## 📁 Struktur
+## 📁 Struktur (Frontend Only)
 
 ```
-projectvilla/
-├── backend/
-│   ├── prisma/schema.prisma (Villa, VillaType, Facility, Room, User, Role...)
-│   ├── src/server.ts, routes/villa.routes.ts, services/, middleware/auth.ts
-│   └── package.json
+villa/
 ├── frontend/
 │   ├── src/app/
 │   │   ├── (public)/page.tsx (home), villas/page.tsx, villas/[id]/page.tsx
-│   │   │         booking/page.tsx, faq/page.tsx, gallery/page.tsx, about/page.tsx, contact/page.tsx
+│   │   │         booking/page.tsx, blog/page.tsx, admin/page.tsx, faq/page.tsx, gallery/page.tsx, about/page.tsx, contact/page.tsx
 │   │   ├── (dashboard)/dashboard/page.tsx, villas/[id]/page.tsx, rooms/...
-│   │   ├── layout.tsx, not-found.tsx, loading.tsx, globals.css
-│   │   ├── components/public/navbar.tsx, footer.tsx, villa-card.tsx, search-bar.tsx, animated-section.tsx
-│   │   ├── components/ui/*, lib/mock-villas.ts, lib/villa-api.ts, store/auth.ts
-│   │   └── next.config.mjs, tailwind.config.ts, postcss.config.mjs
-│   └── package.json (next 15.5, tailwind 4, framer-motion)
-└── docker-compose.yml
+│   │   ├── sitemap.ts, robots.ts, not-found.tsx, loading.tsx, globals.css
+│   │   ├── components/public/navbar.tsx, footer.tsx, villa-card.tsx (use client), search-bar.tsx, animated-section.tsx
+│   │   ├── components/ui/*, lib/mock-villas.ts (12), lib/villa-api.ts, store/auth.ts
+│   │   └── next.config.mjs, tailwind.config.ts
+│   └── public/screenshot-home.jpg (186KB), screenshot-villas.jpg, screenshot-detail.jpg, manifest.json
+├── docker-compose.yml (frontend only)
+└── package.json (dev/build frontend only)
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Frontend Only)
 
 ### 1. Clone
 ```bash
@@ -80,76 +74,48 @@ git clone https://github.com/sulaksana23/villa.git
 cd villa
 ```
 
-### 2. Env
+### 2. Install & Run
 ```bash
-cp .env.example .env
-# edit DB_PASSWORD, JWT_SECRET, NEXT_PUBLIC_API_URL=http://localhost:4000/api
-```
-
-### 3. Docker (recommended)
-```bash
-docker compose up -d villa-db villa-redis
-# backend
-cd backend && npm install && npx prisma migrate dev && npx prisma db seed && npm run dev
-# frontend (di terminal lain)
-cd frontend && npm install && npm run dev -- --port 3045 --hostname 0.0.0.0
+cd frontend && npm install
+npm run dev -- --port 3045 --hostname 0.0.0.0
 # open http://localhost:3045
-```
-
-### 4. Tanpa Docker
-```bash
-# MySQL 8 + Redis 7 harus jalan lokal
-cd backend && npm install && npx prisma generate && npm run dev # :4000
-cd frontend && npm install && npm run dev -- --port 3045
 ```
 
 ### Production Build
 ```bash
-cd frontend && npm run build # ✓ 17 pages (6.73kB /)
+cd frontend && npm run build # ✓ 21 pages (6.73kB /)
 npm run start -- --port 3045
-# atau docker: docker compose up --build villa-frontend # :10080
+# atau docker: docker compose up --build # :10080
+# atau vercel: vercel --prod
+```
+
+### Env (opsional)
+```bash
+# frontend/.env.example
+NEXT_PUBLIC_API_URL=https://backend-chi-six-99.vercel.app/api # jika ada backend, fallback mock jika 401
 ```
 
 ---
 
-## 🔌 API
-
-Backend `http://localhost:4000/api`
-
-| Method | Endpoint | Auth | Desc |
-|--------|----------|------|------|
-| POST | `/auth/login` | - | Login JWT |
-| POST | `/auth/register` | - | Register |
-| GET | `/auth/me` | Bearer | Profile |
-| GET | `/villas` | `view_villas` | List + page, search, is_active |
-| GET | `/villas/:id` | `view_villas` | Detail |
-| POST | `/villas` | `create_villas` | Create |
-| PUT | `/villas/:id` | `edit_villas` | Update |
-| DELETE | `/villas/:id` | `delete_villas` | Delete |
-| GET | `/villas/villa-types` | auth | Types |
-| GET | `/villas/facilities` | auth | Facilities |
-| GET | `/rooms` | `view_rooms` | List rooms |
-
-Frontend fallback `lib/villa-api.ts` → jika `/villas/public` 401 → pakai `mockVillas` 6 data Unsplash.
-
----
-
-## 🎨 Frontend Routes
+## 🎨 Frontend Routes (21 pages)
 
 | Route | File | Desc |
 |-------|------|------|
-| `/` | `(public)/page.tsx` | Hero + SearchBar + trust + categories + featured + testimonials |
+| `/` | `(public)/page.tsx` | Hero + SearchBar + trust + categories + featured 12 + testimonials |
 | `/villas` | `(public)/villas/page.tsx` | Filter + map |
-| `/villas/[id]` | `(public)/villas/[id]/page.tsx` | Gallery + booking widget |
+| `/villas/[id]` | `(public)/villas/[id]/page.tsx` | Gallery + booking widget (1-12) |
 | `/booking?villa=1` | `(public)/booking/page.tsx` | 3 step |
+| `/blog` | `(public)/blog/page.tsx` | 6 posts |
+| `/admin` | `(public)/admin/page.tsx` | Mock admin 12 villa |
 | `/about` | `(public)/about/page.tsx` | Timeline + values |
 | `/contact` | `(public)/contact/page.tsx` | Form + map |
 | `/faq` | `(public)/faq/page.tsx` | 6 Q&A |
 | `/gallery` | `(public)/gallery/page.tsx` | 12 foto |
 | `/favorites` | `(public)/favorites/page.tsx` | Wishlist |
-| `/login`, `/register` | `app/login/page.tsx` | Auth |
-| `/dashboard` | `(dashboard)/dashboard/page.tsx` | Overview |
-| `/dashboard/villas`, `/dashboard/rooms` | `(dashboard)/...` | CRUD |
+| `/sitemap.xml` | `sitemap.ts` | 12 villa + 10 pages |
+| `/robots.txt` | `robots.ts` | Allow / |
+| `/login`, `/register` | `app/login/page.tsx` | Auth mock |
+| `/dashboard` | `(dashboard)/dashboard/page.tsx` | Overview mock |
 
 ---
 
@@ -157,26 +123,19 @@ Frontend fallback `lib/villa-api.ts` → jika `/villas/public` 401 → pakai `mo
 
 ```bash
 # root
-npm run dev              # concurrently backend:4000 + frontend:3000
-npm run build            # build both
-# backend
-npm run dev              # tsx watch src/server.ts
-npx prisma studio        # GUI DB
-npx prisma migrate dev   # migrate
+npm run dev              # cd frontend && next dev
+npm run build            # cd frontend && next build
 # frontend
 npm run dev -- --port 3045
-npm run build
+npm run build            # ✓ 21 pages
 npm run lint
 ```
 
 ---
 
-## 🐳 Docker
+## 🐳 Docker (Frontend Only)
 
 ```yaml
-villa-db: mysql:8.0, 13306:3306, villa_management
-villa-redis: redis:7-alpine, 16379:6379
-villa-backend: node:20-alpine, 4000:4000
 villa-frontend: node:20-alpine, 10080:3000 (standalone)
 ```
 
@@ -189,14 +148,14 @@ villa-frontend: node:20-alpine, 10080:3000 (standalone)
 | ![Home](frontend/public/screenshot-home.jpg) | ![Villas](frontend/public/screenshot-villas.jpg) | ![Detail](frontend/public/screenshot-detail.jpg) |
 | Hero parallax + SearchBar floating (186KB) | Filter + grid 3 + map sticky (265KB) | Gallery 420px + thumb + sticky booking gradient (330KB) |
 
-> Screenshot real dari `npm run dev -- --port 3045` — auto update tiap `npx playwright screenshot`.
+> Screenshot real dari `npm run dev -- --port 3045` — `npx playwright screenshot --full-page` 1200px JPG 82.
 
 ---
 
 ## 🤝 Contributing
 
 1. Fork, branch `feat/nama-fitur`
-2. `npm run build` harus `✓` 17 pages
+2. `npm run build` harus `✓` 21 pages
 3. PR ke `main` — describe + screenshot
 
 ---
@@ -207,4 +166,4 @@ MIT — bebas pakai untuk villa pribadi/komersial.
 
 ---
 
-**Built with ♥ by VillaNusantara Team — Bali 2018→2026 • 500+ villa verified • 12k+ tamu • 4.9/5**
+**Built with ♥ by VillaNusantara Team — Bali 2018→2026 • 12 villa curated • 4.9/5 • Frontend Only • Vercel**
