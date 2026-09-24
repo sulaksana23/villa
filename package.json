@@ -1,22 +1,10 @@
 {
-  "name": "villa-management-system",
+  "name": "villa-frontend-only",
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "build:backend": "cd backend && npm run build",
-    "build:frontend": "cd frontend && npm run build",
-    "build": "npm run build:backend && npm run build:frontend",
-    "db:migrate": "cd backend && npx prisma migrate dev",
-    "db:seed": "cd backend && npx prisma db seed",
-    "db:studio": "cd backend && npx prisma studio",
-    "db:generate": "cd backend && npx prisma generate",
-    "docker:up": "docker compose up -d villa-db villa-redis",
-    "docker:down": "docker compose down"
-  },
-  "devDependencies": {
-    "concurrently": "^9.1.0"
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run start"
   }
 }
