@@ -1,0 +1,12 @@
+{
+  "name": "VillaNusantara",
+  "short_name": "VillaNusantara",
+  "description": "Villa private pool Bali Lombok Jogja - harga jujur",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2563eb",
+  "theme_color": "#2563eb",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "64x64", "type": "image/x-icon" }
+  ]
+}

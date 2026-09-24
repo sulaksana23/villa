@@ -24,10 +24,12 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Jelajah</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/villas" className="hover:text-white">Semua Villa</Link></li>
+              <li><Link href="/villas" className="hover:text-white">Semua Villa (12)</Link></li>
               <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
+              <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
               <li><Link href="/favorites" className="hover:text-white">Favorit</Link></li>
               <li><Link href="/booking?villa=1" className="hover:text-white">Booking</Link></li>
+              <li><Link href="/admin" className="hover:text-white">Admin Mock</Link></li>
               <li><Link href="/about" className="hover:text-white">Tentang Kami</Link></li>
               <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
             </ul>

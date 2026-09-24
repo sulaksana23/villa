@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/villas", label: "Villa" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/about", label: "Tentang" },
   { href: "/contact", label: "Kontak" },
